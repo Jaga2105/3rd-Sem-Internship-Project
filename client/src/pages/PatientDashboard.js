@@ -89,7 +89,7 @@ const PatientDashboard = (props) => {
             <div className="flex  h-12 m-2 bg-bgprimary rounded mt-4  ">
               <div>
                 <h1 className="text-2xl font-poppins font-bold p-2 ">
-                  DashBoard Today
+                  DashBoard
                 </h1>
               </div>
 
