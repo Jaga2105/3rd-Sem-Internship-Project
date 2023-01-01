@@ -228,3 +228,22 @@ module.exports.get_patient = async (req, res) => {
 
   res.status(200).json({ patient });
 };
+
+module.exports.update_patient = async (req, res) => {
+  // console.log(req.body);
+  try {
+    const diseases = Object.values(req.body);
+
+    let patient = req.patient;
+
+    patient.diseases = diseases;
+
+    await patient.save();
+
+    res.status(200).json({ patient });
+  } catch (err) {
+    return res.status(400).json({
+      err,
+    });
+  }
+};
