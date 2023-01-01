@@ -1,63 +1,63 @@
-import "./App.css";
-import Contact from "./components/landingPage/Contact";
-import RegisterPatient from "./components/landingPage/RegisterPatient";
-import RegisterDoctor from "./components/adminDashboard/RegisterDoctor";
-import LandingPage from "./pages/LandingPage";
+import './App.css';
+import Contact from './components/landingPage/Contact';
+import RegisterPatient from './components/landingPage/RegisterPatient';
+import RegisterDoctor from './components/adminDashboard/RegisterDoctor';
+import LandingPage from './pages/LandingPage';
 // import About from "./components/landingPage/About";
-import PatientDashboard from "./pages/PatientDashboard";
-import DoctorDashboard from "./pages/DoctorDashboard";
-import AdminDashboard from "./pages/AdminDashboard";
-import PatientProfile from "./components/patientDashboard/PatientProfile";
-import DoctorProfile from "./components/doctorDashboard/DoctorProfile";
-import PatientReports from "./components/patientDashboard/PatientReports";
-import AddNewDiagnosis from "./components/doctorDashboard/AddNewDiagnosis";
-import { Routes, Route } from "react-router-dom";
-import PatientList from "./components/adminDashboard/PatientList";
-import DoctorList from "./components/adminDashboard/DoctorList";
-import PatientProfileSideBar from "./components/patientDashboard/PatientProfileSideBar";
-import PatientHistory from "./components/patientDashboard/PatientHistory";
-import DoctorDashboardSidebar from "./components/doctorDashboard/DashboardSidebar";
-import AdminSidebar from "./components/adminDashboard/AdminSidebar";
-import PreviewPrescription from "./components/patientDashboard/PreviewPrescription";
-import PatientReportsDoctorView from "./components/doctorDashboard/PatientReportsDoctorView";
-import PatientHistoryDoctorView from "./components/doctorDashboard/PatientHistoryDoctorView";
-import PreviewPrescriptionDoctorView from "./components/doctorDashboard/PreviewPrescriptionDoctorView";
-import { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import Page_404 from "./pages/Page_404";
+import PatientDashboard from './pages/PatientDashboard';
+import DoctorDashboard from './pages/DoctorDashboard';
+import AdminDashboard from './pages/AdminDashboard';
+import PatientProfile from './components/patientDashboard/PatientProfile';
+import DoctorProfile from './components/doctorDashboard/DoctorProfile';
+import PatientReports from './components/patientDashboard/PatientReports';
+import AddNewDiagnosis from './components/doctorDashboard/AddNewDiagnosis';
+import { Routes, Route } from 'react-router-dom';
+import PatientList from './components/adminDashboard/PatientList';
+import DoctorList from './components/adminDashboard/DoctorList';
+import PatientProfileSideBar from './components/patientDashboard/PatientProfileSideBar';
+import PatientHistory from './components/patientDashboard/PatientHistory';
+import DoctorDashboardSidebar from './components/doctorDashboard/DashboardSidebar';
+import AdminSidebar from './components/adminDashboard/AdminSidebar';
+import PreviewPrescription from './components/patientDashboard/PreviewPrescription';
+import PatientReportsDoctorView from './components/doctorDashboard/PatientReportsDoctorView';
+import PatientHistoryDoctorView from './components/doctorDashboard/PatientHistoryDoctorView';
+import PreviewPrescriptionDoctorView from './components/doctorDashboard/PreviewPrescriptionDoctorView';
+import { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Page_404 from './pages/Page_404';
 
 function App() {
-  const [healthID, setHealthID] = useState("");
-  const [prescriptionID, setPrescriptionID] = useState("");
+  const [healthID, setHealthID] = useState('');
+  const [prescriptionID, setPrescriptionID] = useState('');
   const [toastShow, setToastShow] = useState(false);
   const [toastCondition, settoastCondition] = useState({
-    status: "",
-    message: "",
+    status: '',
+    message: '',
   });
 
   if (toastShow) {
-    if (toastCondition.status === "success") {
+    if (toastCondition.status === 'success') {
       toast.success(toastCondition.message);
-    } else if (toastCondition.status === "error") {
+    } else if (toastCondition.status === 'error') {
       toast.error(toastCondition.message);
-    } else if (toastCondition.status === "warning") {
+    } else if (toastCondition.status === 'warning') {
       toast.warn(toastCondition.message);
-    } else if (toastCondition.status == "info") {
+    } else if (toastCondition.status === 'info') {
       toast.info(toastCondition.message);
     }
     settoastCondition({
-      status: "",
-      message: "",
+      status: '',
+      message: '',
     });
     setToastShow(false);
   }
 
   return (
-    <div className="bg-bgprimary flex">
+    <div className='bg-bgprimary flex'>
       <Routes>
         <Route
-          path="/"
+          path='/'
           element={
             <LandingPage
               settoastCondition={settoastCondition}
@@ -67,7 +67,7 @@ function App() {
         />
         {/* <Route path="about" element={<About />} /> */}
         <Route
-          path="contact"
+          path='contact'
           element={
             <Contact
               settoastCondition={settoastCondition}
@@ -76,7 +76,7 @@ function App() {
           }
         />
         <Route
-          path="Register"
+          path='Register'
           element={
             <RegisterPatient
               setToastShow={setToastShow}
@@ -85,7 +85,7 @@ function App() {
           }
         />
         <Route
-          path="patient"
+          path='patient'
           element={
             <PatientProfileSideBar
               settoastCondition={settoastCondition}
@@ -94,7 +94,7 @@ function App() {
           }
         >
           <Route
-            path="dashboard"
+            path='dashboard'
             element={
               <PatientDashboard
                 setPrescriptionID={setPrescriptionID}
@@ -104,7 +104,7 @@ function App() {
             }
           />
           <Route
-            path="reports"
+            path='reports'
             element={
               <PatientReports
                 setPrescriptionID={setPrescriptionID}
@@ -113,8 +113,9 @@ function App() {
               />
             }
           />
+          <Route path='upload' element={<h1>Upload Reports</h1>} />
           <Route
-            path="history"
+            path='history'
             element={
               <PatientHistory
                 setPrescriptionID={setPrescriptionID}
@@ -124,7 +125,7 @@ function App() {
             }
           />
           <Route
-            path="profile"
+            path='profile'
             element={
               <PatientProfile
                 setPrescriptionID={setPrescriptionID}
@@ -134,7 +135,7 @@ function App() {
             }
           />
           <Route
-            path="prescription"
+            path='prescription'
             element={
               <PreviewPrescription
                 prescriptionID={prescriptionID}
@@ -146,7 +147,7 @@ function App() {
         </Route>
 
         <Route
-          path="doctor"
+          path='doctor'
           element={
             <DoctorDashboardSidebar
               setToastShow={setToastShow}
@@ -155,7 +156,7 @@ function App() {
           }
         >
           <Route
-            path="dashboard"
+            path='dashboard'
             element={
               <DoctorDashboard
                 healthID={healthID}
@@ -167,7 +168,7 @@ function App() {
             }
           />
           <Route
-            path="reports"
+            path='reports'
             element={
               <PatientReportsDoctorView
                 healthID={healthID}
@@ -178,7 +179,7 @@ function App() {
             }
           />
           <Route
-            path="history"
+            path='history'
             element={
               <PatientHistoryDoctorView
                 healthID={healthID}
@@ -189,7 +190,7 @@ function App() {
             }
           />
           <Route
-            path="profile"
+            path='profile'
             element={
               <DoctorProfile
                 healthID={healthID}
@@ -199,7 +200,7 @@ function App() {
             }
           />
           <Route
-            path="addDiagno"
+            path='addDiagno'
             element={
               <AddNewDiagnosis
                 healthID={healthID}
@@ -209,7 +210,7 @@ function App() {
             }
           />
           <Route
-            path="prescription"
+            path='prescription'
             element={
               <PreviewPrescriptionDoctorView
                 healthID={healthID}
@@ -222,7 +223,7 @@ function App() {
         </Route>
 
         <Route
-          path="admin"
+          path='admin'
           element={
             <AdminSidebar
               settoastCondition={settoastCondition}
@@ -231,7 +232,7 @@ function App() {
           }
         >
           <Route
-            path="dashboard"
+            path='dashboard'
             element={
               <AdminDashboard
                 settoastCondition={settoastCondition}
@@ -240,7 +241,7 @@ function App() {
             }
           />
           <Route
-            path="doctorslist"
+            path='doctorslist'
             element={
               <DoctorList
                 settoastCondition={settoastCondition}
@@ -249,7 +250,7 @@ function App() {
             }
           />
           <Route
-            path="patientslist"
+            path='patientslist'
             element={
               <PatientList
                 settoastCondition={settoastCondition}
@@ -258,7 +259,7 @@ function App() {
             }
           />
           <Route
-            path="registerdoctor"
+            path='registerdoctor'
             element={
               <RegisterDoctor
                 settoastCondition={settoastCondition}
@@ -267,7 +268,7 @@ function App() {
             }
           />
         </Route>
-        <Route path="*" element={<Page_404 />} />
+        <Route path='*' element={<Page_404 />} />
       </Routes>
       <ToastContainer />
     </div>
