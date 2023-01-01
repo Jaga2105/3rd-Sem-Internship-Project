@@ -29,6 +29,7 @@ import Page_404 from './pages/Page_404';
 import PatientReportUpload from './components/patientDashboard/PatientReportUpload';
 import ViewReport from './pages/ViewReport';
 import ViewReportAsPatient from './pages/ViewReportAsPatient';
+import PatientUpdate from './components/patientDashboard/PatientUpdate';
 
 function App() {
   const [healthID, setHealthID] = useState('');
@@ -96,6 +97,15 @@ function App() {
             />
           }
         >
+          <Route
+            path='updateProfile/:healthID'
+            element={
+              <PatientUpdate
+                settoastCondition={settoastCondition}
+                setToastShow={setToastShow}
+              />
+            }
+          />
           <Route
             path='dashboard'
             element={

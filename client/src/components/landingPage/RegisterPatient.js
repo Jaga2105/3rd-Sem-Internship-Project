@@ -18,6 +18,7 @@ export default function Register(props) {
   });
   const [diseaseList, setDiseaseList] = useState([{ disease: '', yrs: '' }]);
   const [passwordError, setPasswordError] = useState('');
+
   const addDisease = () => {
     const diseaseList1 = [...diseaseList];
     diseaseList1.push({ disease: '', yrs: '' });
@@ -79,7 +80,7 @@ export default function Register(props) {
       }
     };
     auth();
-  });
+  }, [navigate]);
 
   const handleRegisterPatient = async (e) => {
     e.preventDefault();
@@ -97,6 +98,8 @@ export default function Register(props) {
 
       const data = await res.json();
 
+      console.log(data);
+
       if (data.errors) {
         setLoading(false);
         setErrors(data.errors);
@@ -112,12 +115,13 @@ export default function Register(props) {
           message: 'Your Registration done Successfully!',
         });
         props.setToastShow(true);
-        navigate('/patient/dashboard');
+        navigate(`/patient/updateProfile/${data.patient.healthID}`);
       }
     } else {
       setPasswordError("Password Doesn't Matches");
     }
   };
+
   return (
     <div className='body'>
       <Navbar></Navbar>
@@ -133,7 +137,7 @@ export default function Register(props) {
             className='font-poppins lg:ml-60  lg:px-8 lg:py-4 bg-white shadow-lg rounded max-w-screen-lg mt-8 mb-4 '
             onSubmit={handleRegisterPatient}
           >
-            <div className='flex   mt-2 bg-bgsecondary w-fit  justify-between rounded mx-auto'>
+            <div className='flex mt-2 bg-bgsecondary w-fit  justify-between rounded mx-auto'>
               <button
                 onClick={() => setToggle('Patient')}
                 className={

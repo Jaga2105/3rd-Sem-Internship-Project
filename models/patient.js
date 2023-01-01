@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-const { isEmail, isMobilePhone } = require('validator');
+const { isEmail } = require('validator');
 const prescriptionSchema = require('./prescription');
 const res = require('express/lib/response');
 
@@ -37,8 +37,6 @@ const patientSchema = new mongoose.Schema({
   },
   adharCard: {
     type: Number,
-    min: [100000000000, 'Please enter an valid AdharCard Number'],
-    max: [999999999999, 'Please enter an valid AdharCard Number'],
     unique: [true, 'This AdharCard is already Registerd on System.'],
     required: [true, 'Please enter AdharCard Number'],
   },
@@ -69,8 +67,6 @@ const patientSchema = new mongoose.Schema({
     },
     pincode: {
       type: Number,
-      min: [100000, 'Please enter a valid pincode'],
-      max: [999999, 'Please enter a valid pincode'],
       required: [true, 'Please enter complete Address'],
     },
   },
@@ -136,8 +132,6 @@ const patientSchema = new mongoose.Schema({
       },
       pincode: {
         type: Number,
-        min: [100000, 'Please enter a valid pincode'],
-        max: [999999, 'Please enter a valid pincode'],
         required: [true, 'Please Enter complete Address of contact person'],
       },
     },
