@@ -22,7 +22,7 @@ const PatientProfileSideBar = (props) => {
   const [Toggle, setToggle] = useState('Dashboard');
 
   return (
-    <div className='h-screen overflow-y-hidden w-screen grid grid-cols-12'>
+    <div className='min-h-screen  w-screen grid grid-cols-12'>
       <div className='side_bar bg-white shadow col-span-2'>
         <div className='flex m-2 mt-4  '>
           <div className='logo m-2  '>

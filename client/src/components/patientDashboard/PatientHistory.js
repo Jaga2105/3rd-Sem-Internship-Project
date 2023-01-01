@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 // import Footer from "../landingPage/Footer";
 import patient_profile from '../../assets/img/dashboard/patient2_pbl.png';
 import PatientHistoryCompo from './PatientHistoryCompo';
@@ -76,7 +77,7 @@ const PatientHistory = (props) => {
       }
     }
     getpatient();
-  }, [patient.dob, props, navigate]);
+  }, []);
 
   return (
     <div className='col-span-10'>
