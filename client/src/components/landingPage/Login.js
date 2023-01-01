@@ -31,19 +31,6 @@ export default function Login(props) {
     auth();
   }, [navigate]);
 
-  useEffect(() => {
-    const call = async () => {
-      try {
-        const res = await axios.get('/here');
-
-        console.log(res);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    call();
-  }, []);
-
   const handlePatientLogin = async (healthID, password) => {
     setLoading(true);
     const res = await fetch('/login/patient', {
@@ -111,7 +98,7 @@ export default function Login(props) {
         message: 'Logged in Successfully!!!',
       });
       props.setToastShow(true);
-      if (path == '/login/doctor') {
+      if (path === '/login/doctor') {
         navigate('/doctor/dashboard');
       } else {
         navigate('/admin/dashboard');

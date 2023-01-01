@@ -26,6 +26,9 @@ import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Page_404 from './pages/Page_404';
+import PatientReportUpload from './components/patientDashboard/PatientReportUpload';
+import ViewReport from './pages/ViewReport';
+import ViewReportAsPatient from './pages/ViewReportAsPatient';
 
 function App() {
   const [healthID, setHealthID] = useState('');
@@ -113,7 +116,16 @@ function App() {
               />
             }
           />
-          <Route path='upload' element={<h1>Upload Reports</h1>} />
+          <Route
+            path='upload'
+            element={
+              <PatientReportUpload
+                setPrescriptionID={setPrescriptionID}
+                settoastCondition={settoastCondition}
+                setToastShow={setToastShow}
+              />
+            }
+          />
           <Route
             path='history'
             element={
@@ -269,6 +281,15 @@ function App() {
           />
         </Route>
         <Route path='*' element={<Page_404 />} />
+
+        <Route
+          path='/doctor/view_report/:healthID/:report'
+          element={<ViewReport />}
+        />
+        <Route
+          path='/patient/view_report/:healthID/:report'
+          element={<ViewReportAsPatient />}
+        />
       </Routes>
       <ToastContainer />
     </div>
