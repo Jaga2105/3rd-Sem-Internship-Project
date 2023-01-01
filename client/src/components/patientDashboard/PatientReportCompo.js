@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import eye from "../../assets/img/dashboard/eye.png";
+import { Link } from 'react-router-dom';
+import eye from '../../assets/img/dashboard/eye.png';
 
 const PatientReportCompo = (props) => {
   const convertDatetoString = (dateString) => {
@@ -10,11 +10,11 @@ const PatientReportCompo = (props) => {
     return `${day}/${month}/${year}`;
   };
   return (
-    <div className="grid grid-cols-4">
+    <div className='grid grid-cols-5'>
       <div>
         <h1>{convertDatetoString(props.prescription.createdAt)}</h1>
       </div>
-      <div className="flex">
+      <div className='flex'>
         <h1>Dr.</h1>
         <h1>{props.prescription.doctor}</h1>
       </div>
@@ -22,14 +22,26 @@ const PatientReportCompo = (props) => {
         <h1>{props.prescription.diagnosis}</h1>
       </div>
       <Link
-        to="/patient/prescription"
+        to='/patient/prescription'
         onClick={props.setPrescriptionID(props.prescription._id)}
       >
-        <div className=" flex  justify-center bg-primary py-1 px-3 rounded font-semibold font-poppins shadow-sm hover:bg-bgsecondary w-2/4   ">
-          <img src={eye} className="h-4 my-auto"></img>
-          <button className="font-bold ml-2">Preview </button>
+        <div className=' flex  justify-center bg-primary py-1 px-3 rounded font-semibold font-poppins shadow-sm hover:bg-bgsecondary w-2/4   '>
+          <img src={eye} alt='' className='w-full h-4 my-auto'></img>
+          <button className='font-bold ml-2'>Preview </button>
         </div>
       </Link>
+
+      <div>
+        {props.diseases.map((disease, i) => (
+          <div>
+            {i === props.diseases.length - 1 ? (
+              <p>{disease.disease}</p>
+            ) : (
+              <p>{disease.disease} ,</p>
+            )}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
