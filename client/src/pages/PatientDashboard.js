@@ -153,8 +153,15 @@ const PatientDashboard = (props) => {
                   </div>
                 </div>
                 <div>
-                  <h1 className='font-bold mt-4'>Past Health History</h1>
-                  <div>{`${patient.diseases[0].disease} (${patient.diseases[0].yrs} yrs.)`}</div>
+                  <h1 className='font-bold mt-4 mb-2'>Past Health History</h1>
+
+                  <ul className='list-disc pl-6'>
+                    {patient.diseases.map((disease) => (
+                      <li className=''>
+                        {disease.disease} ({disease.yrs} yrs.)
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </div>
@@ -218,8 +225,8 @@ const PatientDashboard = (props) => {
           </div>
 
           <div className='font-poppins m-4  '>
-            <div className='flex justify-between m-8'>
-              <div className='font-bold text-xl ml-4'>
+            <div className='flex justify-between ml-4'>
+              <div className='font-bold text-xl'>
                 <h1>Patient Dashboard</h1>
               </div>
             </div>
