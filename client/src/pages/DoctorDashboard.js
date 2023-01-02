@@ -287,8 +287,15 @@ const DoctorDashboard = (props) => {
                     </div>
                   </div>
                   <div>
-                    <h1 className='font-bold mt-4'>Past Health History</h1>
-                    <div>{`${patient.diseases[0].disease} (${patient.diseases[0].yrs} yrs.)`}</div>
+                    <h1 className='font-bold mt-4 mb-2'>Past Health History</h1>
+
+                    <ul className='list-disc pl-6'>
+                      {patient.diseases.map((disease) => (
+                        <li className=''>
+                          {disease.disease} ({disease.yrs} yrs.)
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               </div>
