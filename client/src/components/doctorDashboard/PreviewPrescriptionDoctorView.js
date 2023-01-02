@@ -60,10 +60,7 @@ const PreviewPrescriptionDoctorView = (props) => {
       state: '',
       pincode: '',
     },
-    reports: {
-      blood_test: '',
-      MRI: '',
-    },
+    reports: {},
   });
   useEffect(() => {
     async function fetchprescription() {
@@ -116,6 +113,8 @@ const PreviewPrescriptionDoctorView = (props) => {
     );
     return false;
   };
+
+  console.log(patient);
 
   return (
     <div
@@ -196,20 +195,24 @@ const PreviewPrescriptionDoctorView = (props) => {
             <h1 className='font-bold'>Reports</h1>
           </div>
 
-          <div>
-            {Object.keys(patient.reports).map((report) => (
-              <div className='flex gap-8 my-2'>
-                <p className='min-w-[100px]'>{report}: </p>
+          {patient && patient?.reports ? (
+            <div>
+              {Object.keys(patient.reports).map((report) => (
+                <div className='flex gap-8 my-2'>
+                  <p className='min-w-[100px]'>{report}: </p>
 
-                <button
-                  className='text-blue-600'
-                  onClick={() => handleViewReport(props.healthID, report)}
-                >
-                  View Report
-                </button>
-              </div>
-            ))}
-          </div>
+                  <button
+                    className='text-blue-600'
+                    onClick={() => handleViewReport(props.healthID, report)}
+                  >
+                    View Report
+                  </button>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <h3 className='text-base'>No reports found!</h3>
+          )}
         </div>
 
         <div className='grid grid-rows-2 mt-4 '>
