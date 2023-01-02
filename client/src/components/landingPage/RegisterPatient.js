@@ -19,11 +19,11 @@ export default function Register(props) {
   const [diseaseList, setDiseaseList] = useState([{ disease: '', yrs: '' }]);
   const [passwordError, setPasswordError] = useState('');
 
-  const addDisease = () => {
-    const diseaseList1 = [...diseaseList];
-    diseaseList1.push({ disease: '', yrs: '' });
-    setDiseaseList(diseaseList1);
-  };
+  // const addDisease = () => {
+  //   const diseaseList1 = [...diseaseList];
+  //   diseaseList1.push({ disease: '', yrs: '' });
+  //   setDiseaseList(diseaseList1);
+  // };
 
   const [patient, setPatient] = useState({
     name: {
@@ -438,7 +438,7 @@ export default function Register(props) {
                 </span>
               </div>
 
-              <div className='lg:grid lg:grid-cols-10 gap-2 mt-8 mr-4'>
+              {/* <div className='lg:grid lg:grid-cols-10 gap-2 mt-8 mr-4'>
                 <div className='col-span-5'>
                   <label className=' lg:text-xl font-bold px-4 grid col-start-1 col-span-3'>
                     Name of any permanant disease (if any)
@@ -505,7 +505,7 @@ export default function Register(props) {
                 <div onClick={addDisease} className='col-span-1'>
                   <img src={plus_logo} alt='' className='h-8 w-8' />
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <div className={Toggle === 'Patient' ? '' : 'hidden'}>

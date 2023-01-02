@@ -178,7 +178,7 @@ const PatientReportUpload = (props) => {
           <div className='mb-3 flex gap-4 md:gap-8 items-center'>
             <label
               htmlFor='blood_test'
-              className='w-fit min-w-[100px] block form-label'
+              className='w-fit min-w-[140px] block form-label'
             >
               Blood test
             </label>
@@ -196,7 +196,7 @@ const PatientReportUpload = (props) => {
           <div className='mb-3 flex gap-4 md:gap-8 items-center'>
             <label
               htmlFor='MRI'
-              className='w-fit min-w-[100px] block form-label'
+              className='w-fit min-w-[140px] block form-label'
             >
               MRI
             </label>
@@ -214,7 +214,7 @@ const PatientReportUpload = (props) => {
           <div className='mb-3 flex gap-4 md:gap-8 items-center'>
             <label
               htmlFor='allergy_test'
-              className='w-fit min-w-[100px] block form-label'
+              className='w-fit min-w-[140px] block form-label'
             >
               Allergy test
             </label>
@@ -232,7 +232,7 @@ const PatientReportUpload = (props) => {
           <div className='mb-3 flex gap-4 md:gap-8 items-center'>
             <label
               htmlFor='blood_sugar_test'
-              className='w-fit min-w-[100px] block form-label'
+              className='w-fit min-w-[140px] block form-label'
             >
               Blood sugar test
             </label>
@@ -250,7 +250,7 @@ const PatientReportUpload = (props) => {
           <div className='mb-3 flex gap-4 md:gap-8 items-center'>
             <label
               htmlFor='ct_scan_test'
-              className='w-fit min-w-[100px] block form-label'
+              className='w-fit min-w-[140px] block form-label'
             >
               CT Scan test
             </label>
@@ -268,7 +268,7 @@ const PatientReportUpload = (props) => {
           <div className='mb-3 flex gap-4 md:gap-8 items-center'>
             <label
               htmlFor='DNA_test'
-              className='w-fit min-w-[100px] block form-label'
+              className='w-fit min-w-[140px] block form-label'
             >
               DNA test
             </label>
@@ -286,7 +286,7 @@ const PatientReportUpload = (props) => {
           <div className='mb-3 flex gap-4 md:gap-8 items-center'>
             <label
               htmlFor='ECG_test'
-              className='w-fit min-w-[100px] block form-label'
+              className='w-fit min-w-[140px] block form-label'
             >
               ECG test
             </label>
@@ -304,7 +304,7 @@ const PatientReportUpload = (props) => {
           <div className='mb-3 flex gap-4 md:gap-8 items-center'>
             <label
               htmlFor='TB_test'
-              className='w-fit min-w-[100px] block form-label'
+              className='w-fit min-w-[140px] block form-label'
             >
               TB test
             </label>
@@ -322,7 +322,7 @@ const PatientReportUpload = (props) => {
           <div className='mb-3 flex gap-4 md:gap-8 items-center'>
             <label
               htmlFor='thyroid_test'
-              className='w-fit min-w-[100px] block form-label'
+              className='w-fit min-w-[140px] block form-label'
             >
               Thyroid test
             </label>
@@ -340,7 +340,7 @@ const PatientReportUpload = (props) => {
           <div className='mb-3 flex gap-4 md:gap-8 items-center'>
             <label
               htmlFor='vitamin_test'
-              className='w-fit min-w-[100px] block form-label'
+              className='w-fit min-w-[140px] block form-label'
             >
               Vitamin test
             </label>
@@ -358,7 +358,7 @@ const PatientReportUpload = (props) => {
           <div className='mb-3 flex gap-4 md:gap-8 items-center'>
             <label
               htmlFor='xray_test'
-              className='w-fit min-w-[100px] block form-label'
+              className='w-fit min-w-[140px] block form-label'
             >
               Xray test
             </label>
@@ -374,9 +374,9 @@ const PatientReportUpload = (props) => {
 
           <button
             type='submit'
-            className='bg-primary px-4 py-2 font-bold text-white rounded-md'
+            className='bg-primary hover:bg-red-500 px-4 py-2 font-bold text-white rounded-md'
           >
-            Upload
+            Upload Reports
           </button>
         </form>
       </div>
