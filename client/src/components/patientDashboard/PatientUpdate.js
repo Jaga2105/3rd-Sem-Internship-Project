@@ -73,13 +73,15 @@ const PatientUpdate = (props) => {
                     setDiseases(diseaseList1);
                   }}
                 />
-                <button
-                  type='button'
-                  onClick={addDisease}
-                  className='bg-blue-600 rounded-md px-4 py-2 text-white'
-                >
-                  Add
-                </button>
+                {diseases.length - 1 === i && (
+                  <button
+                    type='button'
+                    onClick={addDisease}
+                    className='bg-blue-600 rounded-md px-4 py-2 text-white'
+                  >
+                    Add
+                  </button>
+                )}
               </div>
             </div>
           </div>
